@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 14:31:39 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/05 14:32:07 by blevrel          ###   ########.fr       */
+/*   Created: 2022/12/05 14:33:50 by blevrel           #+#    #+#             */
+/*   Updated: 2022/12/05 17:17:25 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FIXED__HPP
-#define	FIXED__HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 #include <iostream>
 #include <cmath>
 #include <limits>
@@ -45,16 +45,15 @@ public:
 	float	operator-(const Fixed & other);
 	float	operator*(const Fixed & other);
 	float	operator/(const Fixed & other);
-	Fixed operator++();
-	Fixed operator++(int);
-	Fixed operator--();
-	Fixed operator--(int);
+	Fixed	operator++();
+	Fixed	operator++(int);
+	Fixed	operator--();
+	Fixed	operator--(int);
 	static Fixed&		min(Fixed& a, Fixed& b);
 	static const Fixed&	min(const Fixed& a, const Fixed& b);
 	static Fixed&		max(Fixed& a, Fixed& b);
 	static const Fixed&	max(const Fixed& a, const Fixed& b);
 };
-
 
 std::ostream& operator<<(std::ostream & os, const Fixed& other);
 

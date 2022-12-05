@@ -1,33 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 18:12:59 by blevrel           #+#    #+#             */
+/*   Updated: 2022/12/05 18:13:01 by blevrel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->nb = 0;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
 	setRawBits(value << this->bits);
 }
 
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
 	setRawBits(roundf(value * (1 << this->bits)));
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 float Fixed::toFloat(void) const
@@ -58,7 +65,6 @@ void	Fixed::setRawBits(int const raw)
 
 Fixed & Fixed::operator=(const Fixed & other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->setRawBits(other.getRawBits());
 	return (*this);
 }
@@ -167,19 +173,6 @@ Fixed Fixed::operator--(int)
 
 	nb--;
 	return (temp);
-}
-
-Fixed&	min(Fixed& a, Fixed& b)
-{
-	if (a.getRawBits() == b.getRawBits())
-	{
-		std::cout << "Both fixed point numbers are equal, returning a reference to the first one" << std::endl;
-		return (a);
-	}
-	if (a.getRawBits() > b.getRawBits())
-		return (b);
-	return (a);
-		
 }
 
 Fixed&	Fixed::min(Fixed& a, Fixed& b)

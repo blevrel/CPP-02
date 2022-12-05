@@ -2,18 +2,17 @@
 
 int main(void)
 {
-	float	nb;
-	Fixed	a(5.5f);
-	Fixed	b(2);
+	Fixed a;
+	Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	std::cout << "a = " << a << ", b = " << b << std::endl << std::endl;
-	nb = a + b;
-	std::cout << "a + b = " << nb << std::endl;
-	nb = a - b;
-	std::cout << "a - b = " << nb << std::endl;
-	nb = a * b;
-	std::cout << "a * b = " << nb << std::endl;
-	nb = a / b;
-	std::cout << "a / b = " << nb << std::endl;
-	return 0;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max(a, b) << std::endl;
+	return (0);
 }
