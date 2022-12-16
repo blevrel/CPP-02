@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/16 13:28:09 by blevrel           #+#    #+#             */
+/*   Updated: 2022/12/16 13:40:54 by blevrel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "Fixed.hpp"
 
 Fixed::Fixed(void)
@@ -22,7 +33,7 @@ Fixed::Fixed(const float value)
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	this->nb = other.getRawBits();
 }
 
 Fixed::~Fixed(void)
@@ -151,7 +162,7 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	temp = *this;
 
-	nb++;
+	this->nb++;
 	return (temp);
 }
 
@@ -165,7 +176,7 @@ Fixed Fixed::operator--(int)
 {
 	Fixed	temp = *this;
 
-	nb--;
+	this->nb--;
 	return (temp);
 }
 

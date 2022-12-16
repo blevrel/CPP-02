@@ -6,7 +6,7 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:12:59 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/05 18:13:01 by blevrel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:41:54 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed(const int value)
 {
 	setRawBits(value << this->bits);
 }
-
 
 Fixed::Fixed(const float value)
 {

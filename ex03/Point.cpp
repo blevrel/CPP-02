@@ -6,10 +6,9 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:39:43 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/05 18:53:06 by blevrel          ###   ########.fr       */
+/*   Updated: 2022/12/16 14:05:29 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Fixed.hpp"
 #include "Point.hpp"
 
 Point::Point(void) : x(0), y(0)
@@ -40,5 +39,7 @@ Fixed	Point::getY(void) const
 
 Point& Point::operator=(Point& other)
 {
-	return (other);
+	(void)other;
+	std::cout << "Can't copy X and Y points because they are declared as \"const\"" << std::endl;
+	return (*this);
 }

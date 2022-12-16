@@ -6,9 +6,11 @@
 /*   By: blevrel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:19:47 by blevrel           #+#    #+#             */
-/*   Updated: 2022/12/05 18:51:29 by blevrel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:52:46 by blevrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef	POINT_HPP
+#define POINT_HPP
 #include "Fixed.hpp"
 
 class	Point
@@ -32,3 +34,5 @@ public:
 };
 
 bool	bsp(Point const& a, Point const& b, Point const& c, Point const& point);
+
+#endif
